@@ -1,0 +1,49 @@
+# Project: Proyecto 1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "main\ 23\ de\ junio.o" Personal.o Administrativo.o Profesor.o Estudiante.o Planta.o Contrato.o Laboratorista.o
+LINKOBJ  = "main 23 de junio.o" Personal.o Administrativo.o Profesor.o Estudiante.o Planta.o Contrato.o Laboratorista.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Clase 23 de Junio.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"main\ 23\ de\ junio.o": main\ 23\ de\ junio.cpp
+	$(CPP) -c "main 23 de junio.cpp" -o "main 23 de junio.o" $(CXXFLAGS)
+
+Personal.o: Personal.cpp
+	$(CPP) -c Personal.cpp -o Personal.o $(CXXFLAGS)
+
+Administrativo.o: Administrativo.cpp
+	$(CPP) -c Administrativo.cpp -o Administrativo.o $(CXXFLAGS)
+
+Profesor.o: Profesor.cpp
+	$(CPP) -c Profesor.cpp -o Profesor.o $(CXXFLAGS)
+
+Estudiante.o: Estudiante.cpp
+	$(CPP) -c Estudiante.cpp -o Estudiante.o $(CXXFLAGS)
+
+Planta.o: Planta.cpp
+	$(CPP) -c Planta.cpp -o Planta.o $(CXXFLAGS)
+
+Contrato.o: Contrato.cpp
+	$(CPP) -c Contrato.cpp -o Contrato.o $(CXXFLAGS)
+
+Laboratorista.o: Laboratorista.cpp
+	$(CPP) -c Laboratorista.cpp -o Laboratorista.o $(CXXFLAGS)
